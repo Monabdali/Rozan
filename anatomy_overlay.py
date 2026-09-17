@@ -13,6 +13,8 @@ import numpy as np
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
+from paths import TRAIN_IMAGES
+
 MODELS = {
     "face": (
         "face_landmarker.task",
@@ -174,8 +176,8 @@ def collect_images(folder: Path) -> list[Path]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", required=True, type=Path, help="Folder of images")
-    parser.add_argument("--output", required=True, type=Path, help="Folder for overlay images")
+    parser.add_argument("--input", type=Path, default=TRAIN_IMAGES, help="Folder of images")
+    parser.add_argument("--output", type=Path, default=Path("out/anatomy"), help="Folder for overlay images")
     parser.add_argument("--models", type=Path, default=Path("models"))
     parser.add_argument("--limit", type=int, default=0, help="Process only the first N images (0 = all)")
     args = parser.parse_args()

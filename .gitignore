@@ -2,5 +2,7 @@
 __pycache__/
 *.task
 models/
+out/
 _pdf_imgs/
+_colab_docs/
 .DS_Store
