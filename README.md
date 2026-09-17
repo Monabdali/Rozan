@@ -2,8 +2,6 @@
 
 Construction overlays for drawing. Face landmarks, Loomis, pose, and hands.
 
-![Rozan construction overlay](docs/result.png)
-
 The image dataset is **private** and is not in this repository.
 
 | Colab | Script | What it did |
