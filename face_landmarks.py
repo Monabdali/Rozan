@@ -11,8 +11,6 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
-from paths import TEST_IMAGES
-
 MODEL_URL = (
     "https://storage.googleapis.com/mediapipe-models/"
     "face_landmarker/face_landmarker/float16/1/face_landmarker.task"
@@ -63,8 +61,8 @@ def collect_images(folder: Path) -> list[Path]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, default=TEST_IMAGES, help="Folder of images")
-    parser.add_argument("--output", type=Path, default=Path("out/face"), help="Folder for annotated images")
+    parser.add_argument("--input", required=True, type=Path, help="Folder of images")
+    parser.add_argument("--output", required=True, type=Path, help="Folder for annotated images")
     parser.add_argument("--model", type=Path, default=Path("models/face_landmarker.task"))
     args = parser.parse_args()
 

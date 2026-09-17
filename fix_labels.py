@@ -7,8 +7,6 @@ import glob
 import os
 from pathlib import Path
 
-from paths import TRAIN_LABELS, VAL_LABELS
-
 
 def fix_labels(folder: Path, pad: float = 0.05) -> int:
     count = 0
@@ -52,8 +50,8 @@ def fix_labels(folder: Path, pad: float = 0.05) -> int:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--train", type=Path, default=TRAIN_LABELS)
-    parser.add_argument("--val", type=Path, default=VAL_LABELS)
+    parser.add_argument("--train", required=True, type=Path)
+    parser.add_argument("--val", required=True, type=Path)
     args = parser.parse_args()
     n_train = fix_labels(args.train)
     n_val = fix_labels(args.val)

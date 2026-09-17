@@ -7,12 +7,10 @@ from pathlib import Path
 
 from ultralytics import YOLO
 
-from paths import DATASET
-
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--data", type=Path, default=DATASET / "data.yaml")
+    parser.add_argument("--data", required=True, type=Path)
     parser.add_argument("--epochs", type=int, default=150)
     parser.add_argument("--imgsz", type=int, default=640)
     parser.add_argument("--batch", type=int, default=8)
