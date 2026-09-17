@@ -1,4 +1,6 @@
 .ipynb_checkpoints/
 __pycache__/
 *.task
+models/
+_pdf_imgs/
 .DS_Store

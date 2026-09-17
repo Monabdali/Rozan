@@ -1,15 +1,25 @@
-# Rozan Colab
+# Rozan
 
-Google Colab notebooks for Rozan landmark experiments. The mobile app and dataset are **not** in this repo.
+Construction overlays for drawing. Face landmarks, Loomis, pose, and hands.
 
-| Notebook | What it does |
-| --- | --- |
-| [`notebooks/rozan-f1.ipynb`](notebooks/rozan-f1.ipynb) | Face Landmarker dots on test images |
-| [`notebooks/rozan-m.ipynb`](notebooks/rozan-m.ipynb) | Face contours, Loomis overlay, pose, and hands on training images |
+![Rozan Loomis overlay](docs/result.png)
 
-Open in Colab:
+## Scripts
 
-- [rozan-f1](https://colab.research.google.com/github/Monabdali/rozan-colab/blob/main/notebooks/rozan-f1.ipynb)
-- [rozan-m](https://colab.research.google.com/github/Monabdali/rozan-colab/blob/main/notebooks/rozan-m.ipynb)
+```bash
+pip install -r requirements.txt
+```
 
-Images stay on Google Drive (`/content/drive/MyDrive/dataset/...`). Mount Drive in Colab before running.
+Face Landmarker dots:
+
+```bash
+python face_landmarks.py --input path/to/images --output path/to/out
+```
+
+Face contours, Loomis, pose, and hands:
+
+```bash
+python anatomy_overlay.py --input path/to/images --output path/to/out
+```
+
+Models download on first run into `models/`. The dataset and mobile app are not in this repo.
