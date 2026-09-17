@@ -4,6 +4,8 @@ __pycache__/
 models/
 out/
 data/
+_tmp_in/
+_tmp_out/
 _pdf_imgs/
 _colab_docs/
 .DS_Store
