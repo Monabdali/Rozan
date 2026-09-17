@@ -2,7 +2,7 @@
 
 Construction overlays for drawing. Face landmarks, Loomis, pose, and hands.
 
-![Rozan Loomis overlay](docs/result.png)
+![Rozan construction overlay](docs/result.png)
 
 Colab PDFs mapped to Python. Images come from local `D:\project\rozan-dataset` (same files as Drive).
 
